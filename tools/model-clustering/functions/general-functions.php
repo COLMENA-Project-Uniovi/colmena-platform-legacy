@@ -1,0 +1,11 @@
+<?php 
+require_once("aux-functions.php");
+require_once("calification-functions.php");
+require_once("compilation-functions.php");
+require_once("connect-functions.php");
+require_once("error-functions.php");
+require_once("model-functions.php");
+require_once("time-functions.php");
+require_once("user-functions.php");
+require_once("session-functions.php");
+?>

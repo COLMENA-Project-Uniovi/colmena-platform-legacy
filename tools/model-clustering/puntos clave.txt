@@ -1,0 +1,20 @@
+Vamos a considerar dos momentos clave en la asignatura.
+
+1 - El control C1
+2 - El control C2
+
+Estos dos momentos son hitos importantes, por lo que vamos a estudiar los grupos de usuarios en el conjunto de sesiones que comprenden los siguientes intervalos:
+
+- Sesiones anteriores al C1
+- Sesiones entre el C1 y el C2
+
+Los ficheros que empieza por control1, hacen referencia a las operaciones con las sesiones anteriores al C1 y los que aparecen con control2 hacen referencia a las sesiones entre el C1 y el C2.
+
+Como tenemos varios cursos, lo que hacemos es procesar los datos en los segmentos indicados para cada curso y luego juntar todos los usuarios encontrados en una única colección, como si se tratara de un único curso.
+
+En este punto tenemos en cuenta los repetidores, anulando de la asignatura más reciente (por tanto, donde repiten) los datos del usuario que ya aparezca en el curso anterior. 
+
+Además de obtener los datos para cada una de las sesiones, se hace una agrupación, haciendo la media de todas las sesiones para un alumno concreto o bien haciendo el sumatorio total, sin hacer media. El objetivo de esto es poder cuantificar los datos generales para la asignatura (antes del C1, entre el C1 y el C2 y para todas las sesiones), pudiendo asociarlo con unas notas. 
+
+La manera de generar los usuarios de toda la asignatura consiste en juntar los alumnos de antes del C1 y los de entre el C1 y C2, haciendo la media entre las sesiones. En este caso no recalculamos todos los alumons que tienen el 80% de asistencia a TODAS las sesiones de la asignatura, si no que mantenemos los listados de usuarios obtenidos en cada bloque. 
+

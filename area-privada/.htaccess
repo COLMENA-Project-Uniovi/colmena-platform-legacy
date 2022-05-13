@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on	
+	RewriteBase /area-privada/
+
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^users/(.*)/(.*)/?$ controller/index.php?template=users-template&id=$1&ida=$2 [L]
+
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^subjects-multiple-sessions/(.*)/?$ controller/index.php?template=subjects-multiple-sessions&sessions_ids=$1 [L]
+
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^(.*)/(.*)/(.*)/(.*)/?$ controller/index.php?template=$1-$2&id=$3&limite=$4 [L]
+
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^(.*)/(.*)/(.*)/?$ controller/index.php?template=$1-$2&id=$3 [L]		
+
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^(.*)/(.*)/?$ controller/index.php?template=$1&id=$2 [L]	
+	
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^(.*)/?$ controller/index.php?template=$1 [L]		
+		
+</IfModule>
